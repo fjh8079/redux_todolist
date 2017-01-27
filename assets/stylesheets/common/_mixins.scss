@@ -1,0 +1,55 @@
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin notList {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+@mixin linear-gradient($color1, $color2) {
+    background: $color1;
+    background: -moz-linear-gradient(top, $color1 20%, $color2 80%);
+    background: -webkit-gradient(left top, left bottom, color-stop(20%, $color1), color-stop(80%, $color2));
+    background: -webkit-linear-gradient(top, $color1 20%, $color2 80%);
+    background: -o-linear-gradient(top, $color1 20%, $color2 80%);
+    background: -ms-linear-gradient(top, $color1 20%, $color2 80%);
+    background: linear-gradient(to bottom, $color1 20%, $color2 80%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2', GradientType=0);
+}
+
+@mixin placeholder {
+    ::-webkit-input-placeholder {
+        @content
+    }
+    :-moz-placeholder {
+        @content
+    }
+    ::-moz-placeholder {
+        @content
+    }
+    :-ms-input-placeholder {
+        @content
+    }
+}
+
+@mixin bp-large {
+    @media only screen and (max-width: 60em) {
+        @content;
+    }
+}
+
+@mixin bp-medium {
+    @media only screen and (max-width: 40em) {
+        @content;
+    }
+}
+
+@mixin bp-small {
+    @media only screen and (max-width: 30em) {
+        @content;
+    }
+}

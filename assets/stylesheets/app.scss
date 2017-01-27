@@ -1,0 +1,248 @@
+@import "common/normalize";
+@import "common/variables";
+@import "common/mixins";
+
+@font-face {
+    font-family: $font_family;
+    src: url('../../assets/fonts/Nunito-Light.ttf');
+}
+
+
+@include placeholder {
+    color: #848484;
+}
+
+i {
+	cursor: pointer;
+}
+
+body{
+	background-repeat: no-repeat;
+	font-family: BlinkMacSystemFont, $font_family, sans-serif;
+	font-size: 18px;
+	letter-spacing: 0px;
+	min-width: 300px;
+	& {
+		@include bp-medium {
+			font-size: 14px;
+		}
+		@include bp-small {
+			font-size: 12px;
+		}
+	}
+}
+
+.bg-color {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100vw;
+	height: 100vh;
+	z-index: -1;
+	@include linear-gradient(#ffffff, #41d1d4);
+}
+
+#todo-app {
+	padding: 10% 0px;
+	#top-div {
+		display: block;
+		&.fixed {
+			position: fixed;
+			width: 100%;
+			top: 0px;
+			z-index: 10;
+		}
+	}
+}
+
+.header {
+	text-align: center;
+	margin-bottom: 1%;
+	.logo {
+		display: inline-block;
+		font-size: 6em;
+	    line-height: 1em;
+	    letter-spacing: 10px;
+		font-weight: lighter;
+		color: $green_color;
+	}
+}
+
+.content {
+	margin: 0px auto;
+	width: 100%;
+	max-width: 500px;
+	.tabs {
+		@include notList;
+		padding: 1.5em 2em;
+		.tab {
+			display: inline-block;
+		    text-align: center;
+		    width: 23%;
+		    color: $gray_color;
+		    &.active {
+		    	color: $green_color;
+		    }
+		}
+	}
+	.inputFrame {
+		position: relative;
+		&:hover {
+			&:after {
+    	        content: '';
+			    position: absolute;
+			    z-index: 99;
+			    left: 0px;
+			    bottom: -4px;
+			    height: 4px;
+			    width: 100%;
+			    @include linear-gradient(#c5c5c5, rgba(225, 225, 225, 0));
+		    }
+		}
+		input {
+            border: 1px solid $gray_border_color;
+		    width: calc(100% - 6.2rem - 2px);
+		    font-size: 1.2em;
+		    line-height: 1.5em;
+		    font-family: $font_family, sans-serif;
+		    padding: 1rem;
+		    font-weight: bold;
+		    color: $black_color;
+		    padding-right: 5.2rem;
+		    outline: none;
+		}
+		.plusSign {
+				cursor: pointer;
+			    position: absolute;
+			    color: $green_color;
+			    font-weight: bold;
+			    padding: 1em;
+			    font-size: 1.2em;
+			    right: 0px;
+			    top: 0px;
+			i {
+				&:before {
+					font-weight: bold;
+				}
+			}
+		}
+	}
+}
+
+.todolist {
+	@include notList;
+	.list {
+		position: relative;
+		padding: 2em 1em;
+		background-color: #FFF;
+		border: 1px solid $gray_border_color;
+		border-top: none;
+		font-size: 1.2em;
+		color: $green_color;
+		vertical-align: middle;
+		.checkbox {
+		    display: inline-block;
+		    width: 2.2em;
+		    vertical-align: middle;
+			i {
+				margin-right: 0.5em;
+			    line-height: 1.2em;
+			    vertical-align: middle;
+			    &:before {
+		    	    font-size: 1.5em;
+		    	    vertical-align: bottom;
+			    }
+			}
+		}
+		&.gray {
+			color: $gray_color;
+		}
+		&:hover {
+		    &:after {
+    	        content: '';
+			    position: absolute;
+			    z-index: 99;
+			    left: 0px;
+			    bottom: -4px;
+			    height: 4px;
+			    width: 100%;
+			    @include linear-gradient(#c5c5c5, rgba(225, 225, 225, 0));
+		    }
+		    .functions {
+		    	> div {
+					display: block;
+		    	}
+		    }
+		}
+		.isStared {
+			> div {
+				&:nth-child(1) {
+					display: block;
+				}
+			}
+		}
+		.functions {
+	    	> div {
+	    		display: none;
+				&:nth-child(1) {
+					position: absolute;
+					top: 1em;
+					right: 1em;
+					.icon-star {
+						display: block;
+						color: $yellow_color;
+					}
+					.icon-star-o {
+						color: $gray_color;
+					}
+					&:hover {
+						.icon-star,
+						.icon-star-o {
+							color: $yellow_color;
+						}
+					}
+				}
+				&:nth-child(2) {
+					position: absolute;
+					bottom: 1em;
+					right: 1em;
+					&:hover {
+						.icon-trash-o {
+							color: $red_color;
+						}
+					}
+					.icon-trash-o {
+						color: $gray_color;
+					}
+				}
+			}
+		}
+		.des {
+		    width: calc(100% - 3em);
+		    display: inline-block;
+		    vertical-align: middle;
+		    word-break: break-all;
+		    input {
+	    	    width: calc(100% - 1em);
+		    	padding: 0px;
+		    	border: none;
+		    	color: inherit;
+		    	outline: none;
+		    	&:focus {
+		    		color: $black_color;
+		    	}
+		    }
+		}
+
+	}
+}
+
+.noData {
+	text-align: center;
+	color: $deep_green_color;
+	margin-top: 6%;
+	font-size: 2.5em;
+	letter-spacing: 2px;
+}
+
+

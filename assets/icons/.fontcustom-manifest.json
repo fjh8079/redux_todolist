@@ -1,0 +1,78 @@
+{
+  "checksum": {
+    "previous": "61026fff741de00dfa44e1fa6bb98bd418195caff72b72a2c73f3f13491bde8e",
+    "current": "61026fff741de00dfa44e1fa6bb98bd418195caff72b72a2c73f3f13491bde8e"
+  },
+  "fonts": [
+    "fontcustom/fontcustom_61026fff741de00dfa44e1fa6bb98bd4.ttf",
+    "fontcustom/fontcustom_61026fff741de00dfa44e1fa6bb98bd4.svg",
+    "fontcustom/fontcustom_61026fff741de00dfa44e1fa6bb98bd4.woff",
+    "fontcustom/fontcustom_61026fff741de00dfa44e1fa6bb98bd4.eot"
+  ],
+  "glyphs": {
+    "add": {
+      "codepoint": 61703,
+      "source": "./add.svg"
+    },
+    "check-circle": {
+      "codepoint": 61696,
+      "source": "./check-circle.svg"
+    },
+    "circle-o": {
+      "codepoint": 61697,
+      "source": "./circle-o.svg"
+    },
+    "circle-thin": {
+      "codepoint": 61702,
+      "source": "./circle-thin.svg"
+    },
+    "plus": {
+      "codepoint": 61698,
+      "source": "./plus.svg"
+    },
+    "star": {
+      "codepoint": 61699,
+      "source": "./star.svg"
+    },
+    "star-o": {
+      "codepoint": 61700,
+      "source": "./star-o.svg"
+    },
+    "trash-o": {
+      "codepoint": 61701,
+      "source": "./trash-o.svg"
+    }
+  },
+  "options": {
+    "autowidth": false,
+    "config": "fontcustom.yml",
+    "css_selector": ".icon-{{glyph}}",
+    "debug": false,
+    "font_ascent": 448,
+    "font_descent": 64,
+    "font_design_size": 16,
+    "font_em": 512,
+    "font_name": "fontcustom",
+    "force": false,
+    "input": {
+      "templates": ".",
+      "vectors": "."
+    },
+    "no_hash": false,
+    "output": {
+      "css": "fontcustom",
+      "fonts": "fontcustom",
+      "preview": "fontcustom"
+    },
+    "preprocessor_path": null,
+    "quiet": false,
+    "templates": [
+      "css",
+      "preview"
+    ]
+  },
+  "templates": [
+    "fontcustom/fontcustom.css",
+    "fontcustom/fontcustom-preview.html"
+  ]
+}
